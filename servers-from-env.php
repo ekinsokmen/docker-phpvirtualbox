@@ -25,10 +25,13 @@ foreach ($_SERVER as $key => $value) {
         
         echo '- ' . $name . ' (' . $location .')' . PHP_EOL;
 
+        $username = getenv($prefix . '_USERNAME');
+        $password = getenv($prefix . '_PASSWORD');
+        
         $servers []= array(
             'name' => $name,
-            'username' => 'username',
-            'password' => 'password',
+            'username' => $username,
+            'password' => $password,
             'authMaster' => true,
             'location' => $location
         );
